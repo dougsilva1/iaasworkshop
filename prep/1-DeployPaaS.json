@@ -2,8 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "sites_msftbakery_name": {
-            "defaultValue": "msftbakery",
+        "sites_dougwebapp_name": {
+            "defaultValue": "dougwebapp",
             "type": "String"
         },
         "config_web_name": {
@@ -14,8 +14,8 @@
             "defaultValue": "ServicePlan49f244d6-a5f2",
             "type": "String"
         },
-        "hostNameBindings_msftbakery.azurewebsites.net_name": {
-            "defaultValue": "msftbakery.azurewebsites.net",
+        "hostNameBindings_dougwebapp.azurewebsites.net_name": {
+            "defaultValue": "dougwebapp.azurewebsites.net",
             "type": "String"
         },
         "deployments_c0aa36afdd681d3036e80b36f197f447319b90aa_name": {
@@ -26,7 +26,7 @@
     "variables": {},
     "resources": [
         {
-            "comments": "Generalized from resource: '/subscriptions/bb8d92ab-ec49-423f-8832-49d2365759a5/resourceGroups/msftbakery/providers/Microsoft.Web/serverfarms/ServicePlan49f244d6-a5f2'.",
+            "comments": "Generalized from resource: '/subscriptions/bb8d92ab-ec49-423f-8832-49d2365759a5/resourceGroups/dougwebapp/providers/Microsoft.Web/serverfarms/ServicePlan49f244d6-a5f2'.",
             "type": "Microsoft.Web/serverfarms",
             "sku": {
                 "name": "S1",
@@ -53,10 +53,10 @@
             "dependsOn": []
         },
         {
-            "comments": "Generalized from resource: '/subscriptions/bb8d92ab-ec49-423f-8832-49d2365759a5/resourceGroups/msftbakery/providers/Microsoft.Web/sites/msftbakery'.",
+            "comments": "Generalized from resource: '/subscriptions/bb8d92ab-ec49-423f-8832-49d2365759a5/resourceGroups/dougwebapp/providers/Microsoft.Web/sites/dougwebapp'.",
             "type": "Microsoft.Web/sites",
             "kind": "app",
-            "name": "[parameters('sites_msftbakery_name')]",
+            "name": "[parameters('sites_dougwebapp_name')]",
             "apiVersion": "2016-08-01",
             "location": "Central US",
             "scale": null,
@@ -64,7 +64,7 @@
                 "enabled": true,
                 "hostNameSslStates": [
                     {
-                        "name": "[concat(parameters('sites_msftbakery_name'),'.azurewebsites.net')]",
+                        "name": "[concat(parameters('sites_dougwebapp_name'),'.azurewebsites.net')]",
                         "sslState": "Disabled",
                         "virtualIP": null,
                         "thumbprint": null,
@@ -72,7 +72,7 @@
                         "hostType": "Standard"
                     },
                     {
-                        "name": "[concat(parameters('sites_msftbakery_name'),'.scm.azurewebsites.net')]",
+                        "name": "[concat(parameters('sites_dougwebapp_name'),'.scm.azurewebsites.net')]",
                         "sslState": "Disabled",
                         "virtualIP": null,
                         "thumbprint": null,
@@ -98,9 +98,9 @@
             ]
         },
         {
-            "comments": "Generalized from resource: '/subscriptions/bb8d92ab-ec49-423f-8832-49d2365759a5/resourceGroups/msftbakery/providers/Microsoft.Web/sites/msftbakery/config/web'.",
+            "comments": "Generalized from resource: '/subscriptions/bb8d92ab-ec49-423f-8832-49d2365759a5/resourceGroups/dougwebapp/providers/Microsoft.Web/sites/dougwebapp/config/web'.",
             "type": "Microsoft.Web/sites/config",
-            "name": "[concat(parameters('sites_msftbakery_name'), '/', parameters('config_web_name'))]",
+            "name": "[concat(parameters('sites_dougwebapp_name'), '/', parameters('config_web_name'))]",
             "apiVersion": "2016-08-01",
             "location": "Central US",
             "scale": null,
@@ -129,7 +129,7 @@
                 "httpLoggingEnabled": false,
                 "logsDirectorySizeLimit": 35,
                 "detailedErrorLoggingEnabled": false,
-                "publishingUsername": "$msftbakery",
+                "publishingUsername": "$dougwebapp",
                 "publishingPassword": null,
                 "appSettings": null,
                 "azureStorageAccounts": {},
@@ -213,13 +213,13 @@
                 "reservedInstanceCount": 0
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_msftbakery_name'))]"
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dougwebapp_name'))]"
             ]
         },
         {
-            "comments": "Generalized from resource: '/subscriptions/bb8d92ab-ec49-423f-8832-49d2365759a5/resourcegroups/msftbakery/providers/Microsoft.Web/sites/msftbakery/deployments/c0aa36afdd681d3036e80b36f197f447319b90aa'.",
+            "comments": "Generalized from resource: '/subscriptions/bb8d92ab-ec49-423f-8832-49d2365759a5/resourcegroups/dougwebapp/providers/Microsoft.Web/sites/dougwebapp/deployments/c0aa36afdd681d3036e80b36f197f447319b90aa'.",
             "type": "Microsoft.Web/sites/deployments",
-            "name": "[concat(parameters('sites_msftbakery_name'), '/', parameters('deployments_c0aa36afdd681d3036e80b36f197f447319b90aa_name'))]",
+            "name": "[concat(parameters('sites_dougwebapp_name'), '/', parameters('deployments_c0aa36afdd681d3036e80b36f197f447319b90aa_name'))]",
             "apiVersion": "2016-08-01",
             "location": "Central US",
             "scale": null,
@@ -235,23 +235,23 @@
                 "active": true
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_msftbakery_name'))]"
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dougwebapp_name'))]"
             ]
         },
         {
-            "comments": "Generalized from resource: '/subscriptions/bb8d92ab-ec49-423f-8832-49d2365759a5/resourceGroups/msftbakery/providers/Microsoft.Web/sites/msftbakery/hostNameBindings/msftbakery.azurewebsites.net'.",
+            "comments": "Generalized from resource: '/subscriptions/bb8d92ab-ec49-423f-8832-49d2365759a5/resourceGroups/dougwebapp/providers/Microsoft.Web/sites/dougwebapp/hostNameBindings/dougwebapp.azurewebsites.net'.",
             "type": "Microsoft.Web/sites/hostNameBindings",
-            "name": "[concat(parameters('sites_msftbakery_name'), '/', parameters('hostNameBindings_msftbakery.azurewebsites.net_name'))]",
+            "name": "[concat(parameters('sites_dougwebapp_name'), '/', parameters('hostNameBindings_dougwebapp.azurewebsites.net_name'))]",
             "apiVersion": "2016-08-01",
             "location": "Central US",
             "scale": null,
             "properties": {
-                "siteName": "msftbakery",
+                "siteName": "dougwebapp",
                 "domainId": null,
                 "hostNameType": "Verified"
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', parameters('sites_msftbakery_name'))]"
+                "[resourceId('Microsoft.Web/sites', parameters('sites_dougwebapp_name'))]"
             ]
         }
     ]
